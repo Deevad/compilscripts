@@ -145,12 +145,16 @@ _user_uninstall()
 	echo "------------------------------------------------------${BLACK}"
 	echo "      "
 	echo "${RED}This part will uninstall all $project"
-	echo "Obviously : to uninstall , you need a previous installation"
-	echo -n "press [Enter] to continue, or [Ctrl+C] to exit${BLACK}"
+	echo "Obviously : to uninstall , you need a previous installation${BLACK}"
+	echo -n "press [Enter] to continue, or [Ctrl+C] to exit"
 	read CHOICE
 	cd $srcDir
-	sudo scons prefix=/usr/local uninstall
+	sudo scons uninstall
+	_separators
+	echo "${BLUE}  Updating GTK2 Cache for icons in menu, and kbuildsycoca4 for KDE menu ${BLACK}"
+	echo "      "
 	sudo gtk-update-icon-cache --ignore-theme-index /usr/local/share/icons/hicolor
+	kbuildsycoca4
 	echo "${RED} To-do manually : $project"
 	echo "* Now if you want to also delete the sources , delete manually $directory/$project/ "
 	echo -n "press [Enter] to continue, or [Ctrl+C] to exit${BLACK}"
