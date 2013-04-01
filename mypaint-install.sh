@@ -13,7 +13,7 @@ scriptversion="v0.2a"
 project=mypaint
 
 # Help page
-helppage=http://www.davidrevoy.com/article155/linux-mint-14-kde-for-painters
+helppage=https://github.com/Deevad/compilscripts
 
 # Root directory
 directory=$HOME/Software
