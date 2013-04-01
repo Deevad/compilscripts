@@ -105,6 +105,7 @@ _compile_sources()
 	make -j$numCores
 	_separators
 	echo "${BLUE}  Now, installing $project direcly into your system ${BLACK}"
+	echo "${BLUE}  [ Note: to install it, the script will ask you probably your password ] ${BLACK}"
 	echo "      "
 	sudo make install -j$numCores
 }
