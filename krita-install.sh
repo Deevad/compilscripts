@@ -138,6 +138,30 @@ _user_install()
 	_done
 }
 
+_user_uninstall()
+{
+	echo "${BLUE}------------------------------------------------------"
+	echo "UNINSTALLATION"
+	echo "------------------------------------------------------${BLACK}"
+	echo "      "
+	echo "${RED}This part will uninstall all $project"
+	echo "Obviously : to uninstall , you need a previous installation"
+	echo -n "press [Enter] to continue, or [Ctrl+C] to exit${BLACK}"
+	read CHOICE
+	cd $buildDir
+	make uninstall
+	kbuildsycoca4
+	echo "${RED} To-do manually : $project"
+	echo "* Now if you want to also delete the sources and build directory , delete manually $directory/$project "
+	echo "* You can also clean the 2 export lines added to your ~/.profile files "
+	echo "   export PATH=$PATH:$instDir/bin"
+	echo "   export KDEDIRS=$KDEDIRS:$instDir"
+	echo -n "press [Enter] to continue, or [Ctrl+C] to exit${BLACK}"
+	read CHOICE
+	_done
+	
+}
+
 _user_update()
 {
 	echo "${BLUE}------------------------------------------------------"
@@ -233,6 +257,10 @@ echo " ${BLACK}"
 
 	elif [ "$mainmenu" = 4 ]; then
 		_user_reset_master
+		_endkey
+		
+	elif [ "$mainmenu" = 5 ]; then
+		_user_uninstall
 		_endkey
 		
 	elif [ "$mainmenu" = 6 ]; then
