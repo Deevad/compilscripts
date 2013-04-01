@@ -92,12 +92,35 @@ _install_dependencies()
 	echo "<<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>>${BLACK}"
 	echo -n "           press [Enter] when your system is setup and ready, or [Ctrl+C] to exit"
 	read CHOICE     
-	
+	echo "${BLUE}------------------------------------------------------"
+	echo "UPDATING SYSTEM"
+	echo "------------------------------------------------------${BLACK}"
+	echo "      "
 	sudo apt-get -y update
+	echo "${BLUE}------------------------------------------------------"
+	echo "AUTOREMOVING KRITA, KOFFICE, KARBON, CALLIGRA PACKAGES"
+	echo "------------------------------------------------------${BLACK}"
+	echo "      "
 	sudo apt-get purge krita* koffice* karbon* calligra*
+	echo "${BLUE}------------------------------------------------------"
+	echo "UPDGRADING SYSTEM"
+	echo "------------------------------------------------------${BLACK}"
+	echo "      "
 	sudo apt-get -y upgrade
+	echo "${BLUE}------------------------------------------------------"
+	echo "INSTALLING LITTLE DEPENDENCIES AROUND CALLIGRA"
+	echo "------------------------------------------------------${BLACK}"
+	echo "      "
 	sudo apt-get -y install cl-fftw3 liblcms2-dev cmake liblcms2-2 liblcms2-utils git xserver-xorg-input-wacom oxygen-icon-theme kde-runtime wget liblcms1-dev kdebase-runtime systemsettings qt4-qtconfig qtcurve libwpg-tools libwpd-tools poppler-utils opengtl-tools libcxxtools-dev phonon-backend-gstreamer
+	echo "${BLUE}------------------------------------------------------"
+	echo "INSTALLING CALLIGRA DEPENDENCIES"
+	echo "------------------------------------------------------${BLACK}"
+	echo "      "
 	sudo apt-get -y build-dep calligra
+	echo "${BLUE}------------------------------------------------------"
+	echo "CHECK BROKEN PACKAGES"
+	echo "------------------------------------------------------${BLACK}"
+	echo "      "
 	sudo apt-get -f install
 }
 
