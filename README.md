@@ -13,9 +13,75 @@
 	
 	Installation
 	------------
-	Download, check execute permissions and execute them inside a terminal.
-	Install Mypaint first, then VC , then Krita ; and reboot.
-	Follow the instructions written on screen.
+	
+	* Get the script :
+	  - Download as ZIP : https://github.com/Deevad/compilscripts/archive/master.zip
+	  - or Clone with Git :  git clone https://github.com/Deevad/compilscripts.git
+	
+	* Run the script :
+	  - Execute permissions must be set on files.
+	  - Open a terminal
+	  - Execute them inside a terminal.
+	  - Install Mypaint first, then VC , then Krita ; and reboot.
+	  - Follow the instructions written on screen.
+	
+	
+	Documentation
+	------------
+
+	To use this script, you must know basics of compilation.
+	The main menu offer 7 choice :
+		
+		(1) Install  
+			To perform only one time the first time
+			It will grab source with GIT, compile them, and install
+			
+		(2) Update	
+			To update an already installed project. 
+			It will update the source code, and compile and reinstall over the previous
+			Ideal to follow daily or weekly a project
+		
+		(3) Compile only
+			Specific for user who do change in source code and want a simple
+			compilation only. 
+		
+		(4) Reset to master
+			If your source is corrupt with changes, or you want to clean
+			this option propose method to clean local files and assure
+			you to be updated to master
+		
+		(5) Uninstall
+			This option remove the build project installed
+			
+		(6) Online manual
+			This option launch the default webbrowser and load
+			https://github.com/Deevad/compilscripts
+			where you can read this documentation, and report issue, commit code.
+		
+		(7) Exit
+			This option exit from the menu
+			
+			
+			
+	Troubleshot
+	------------
+
+	How to behave in case of trouble :
+	
+		1) Check the log :
+			You might not be used to read terminal output, but in case of error , the lines are usually obvious and sometime propose a solution.
+			Configure the preferences of your Terminal to see more than 500 lines of history is also good to know whats really happen.
+			
+		2) Restart a bit later
+			The script compile the source code commited 1second ago. 
+			Developpers might did a mistake who lead into broken compilation, but it never stay long to get corrected. 
+			Also, Git server might not be connected. 
+			The scripts depend of a lot of services, so its always wise to retry a bit later. 
+			
+		3) Send the log to bug repport
+			If you can save the log with the error in a txt file ( a copy/paste ) and send it to developpers, they can guide you about why
+			the compilation didn't succeed on your machine. 
+
 	
 	
 	Changelog :
