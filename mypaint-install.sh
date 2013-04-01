@@ -67,6 +67,8 @@ _install_dependencies()
 	echo " "
 	echo  "Reason : You can't use $project package ( from repo, or ppa ) along this compilation !"
 	echo " "
+	echo "Also ; a full system update/upgrade will be done"
+	echo " "
 	echo "<<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>>${BLACK}"
 	echo -n "           press [Enter] when your system is setup and ready, or [Ctrl+C] to exit"
 	read CHOICE     
@@ -75,6 +77,11 @@ _install_dependencies()
 	echo "------------------------------------------------------${BLACK}"
 	echo "      "
 	sudo apt-get -y update
+	echo "${BLUE}------------------------------------------------------"
+	echo "UPDGRADING SYSTEM"
+	echo "------------------------------------------------------${BLACK}"
+	echo "      "
+	sudo apt-get -y upgrade
 	echo "${BLUE}------------------------------------------------------"
 	echo "REMOVING MYPAINT PACKAGES"
 	echo "------------------------------------------------------${BLACK}"

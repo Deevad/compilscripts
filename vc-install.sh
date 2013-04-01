@@ -62,7 +62,9 @@ _install_dependencies()
 	echo " "
 	echo  "This part will do an attempt to auto-install all the dependencies "
 	echo  "for building $project. Around 150MB will be necessary to perform it"
-	echo  "Also ; a full system update will be done"
+	echo " "
+	echo "Also ; a full system update/upgrade will be done"
+	echo " "
 	echo "<<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>>${BLACK}"
 	echo -n "           press [Enter] when your system is setup and ready, or [Ctrl+C] to exit"
 	read CHOICE     

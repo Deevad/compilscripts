@@ -89,6 +89,8 @@ _install_dependencies()
 	echo  "* On the tab 'Other Software' check to activate 'Ubuntu 12.10 Quantal Quetzal (source code) ' "
 	echo  "...then close the windows to finish "
 	echo " "
+	echo "Also ; a full system update/upgrade will be done"
+	echo " "
 	echo "<<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>>${BLACK}"
 	echo -n "           press [Enter] when your system is setup and ready, or [Ctrl+C] to exit"
 	read CHOICE     
