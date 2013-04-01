@@ -47,33 +47,38 @@ _setup_dir()
 
 _done()
 {
-	echo "Done."
-	echo "Thanks for using the $project-install.sh script"
-	echo "-----------------------------------------------"
+	echo " "
+	echo "${GREEN}------------------------------------------------------------"
+	echo " All task requested are now done"
+	echo "-----------------------------------------------------------"
+	echo " Note : this doesn't mean everything was fine, check the log for more info-${BLACK}"
+	echo " "
 }
 
 _install_dependencies()
 {
+	echo "${RED}----------------------WARNING-------------------------"
+	echo "      "
 	echo  "This part will install all the dependencies for building $project"
-	echo  "Around 2GB will be necessary to install everything, and system will be updated"
-	echo  "Also, every Krita , Karbon installed via package will be automatically uninstalled"
+	echo  "Around 2GB will be necessary to install everything in your /home directory, and system will be updated"
+	echo  "Also, every Krita , Karbon and Calligra package must be uninstalled"
 	echo "      "
 	echo "      "
-	echo "IMPORTANT : TO READ AND TO DO"
+	echo "       ==== IMPORTANT : TO-READ AND TO-DO ===="
 	echo  "Before going further, you need to activate the sources repositories manually"
-	echo  "To proceed :"
-	echo  "- Open KDE menu"
-	echo  "- Search for 'Software Sources'"
-	echo  "- Open it"
-	echo  "- On the tab 'Linux Mint Software' , check to activate 'Source code' "
-	echo  "- On the tab 'Other Software' check to activate 'Ubuntu 12.10 Quantal Quetzal (source code) ' "
+	echo  "* Open KDE menu"
+	echo  "* Search for 'Software Sources'"
+	echo  "* Open it"
+	echo  "* On the tab 'Linux Mint Software' , check to activate 'Source code' "
+	echo  "* On the tab 'Other Software' check to activate 'Ubuntu 12.10 Quantal Quetzal (source code) ' "
 	echo  "...then close the windows to finish "
 	echo "      "
-	echo  "-- Thanks"
 	echo "      "
 	echo "      "
-	echo -n "press [Enter] when it's done, or [Ctrl+C] to abort"
-	read CHOICE
+	echo "-----------------------------------------------------${BLACK}"
+	echo -n "press [Enter] when you did all the task and met all requirement, or [Ctrl+C] to abort"
+	read CHOICE     
+	
 	sudo apt-get -y update
 	sudo apt-get purge krita* koffice* karbon* calligra*
 	sudo apt-get -y upgrade
