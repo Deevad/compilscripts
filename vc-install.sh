@@ -49,9 +49,12 @@ _setup_dir()
 
 _done()
 {
-	echo "Done."
-	echo "Thanks for using the $project-install.sh script"
-	echo "-----------------------------------------------"
+	echo " "
+	echo "${GREEN}------------------------------------------------------------"
+	echo " All task requested are now done"
+	echo "-----------------------------------------------------------"
+	echo " Note : this doesn't mean everything was fine, check the log for more info-${BLACK}"
+	echo " "
 }
 
 _install_dependencies()
