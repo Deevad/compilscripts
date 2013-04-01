@@ -18,12 +18,33 @@
 	  - Download as ZIP : https://github.com/Deevad/compilscripts/archive/master.zip
 	  - or Clone with Git :  git clone https://github.com/Deevad/compilscripts.git
 	
-	* Run the script :
-	  - Execute permissions must be set on files.
-	  - Open a terminal
+	Install Mypaint first, then VC , then Krita ; and reboot.
+	
+	* Run a script :
+	  - Open a terminal in the folder containing the script :
+		( ex: on file explorer 'Dolphin' , right click , Action > Open a terminal here )
+		
+	  - Permissions : be sure the *.sh files can be executed.
+		( ex : chmod +x krita-install.sh )
+		
 	  - Execute them inside a terminal.
-	  - Install Mypaint first, then VC , then Krita ; and reboot.
+		( ex : ./krita-install.sh )
+		
 	  - Follow the instructions written on screen.
+		
+	  
+	  If you use the script often , you might want to make a launcher. 
+			1. Right click on KDE menu
+			2. Edit Application
+			3. Select 'System' in the tree
+			4. Press 'New item'
+			5. Name it Krita-install
+			6. In command, use the file explorer icon to find your krita-install.sh script on disk.
+			7. When its done, Open the advanced tab and check 'Run in terminal'
+			8. Redo the same for the Mypaint script
+			9. Press save and close. 
+			10. Now you have in your KDE menu , under System the script ready to launch , or put as favorite
+
 	
 	
 	Documentation
