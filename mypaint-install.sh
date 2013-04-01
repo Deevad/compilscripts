@@ -35,30 +35,6 @@ BLUE="\033[1;34m"
 GREEN="\033[1;32m"
 RED="\033[1;31m"
 
-_show_gpl()
-{
-echo ""
-echo "${PINK}-----------------------------GPL----------------------------${BLACK}"
-echo "${BLUE} mypaint-install is a bash script file written to be used with Linux Mint KDE 14."
-echo "Copyright (C) 2013 by David Revoy, info@davidrevoy.com"
-echo ""
-echo "This program is free software; you can redistribute it and/or modify"
-echo "it under the terms of the GNU General Public License as published by"
-echo "the Free Software Foundation; either version 2 of the License, or"
-echo "any later version."
-echo ""
-echo "This program is distributed in the hope that it will be useful,"
-echo "but WITHOUT ANY WARRANTY; without even the implied warranty of"
-echo "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the"
-echo "GNU General Public License for more details."
-echo ""
-echo "You should have received a copy of the GNU General Public License"
-echo "along with this program; if not, write to the Free Software"
-echo "Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307 USA${BLACK}"
-echo "${PINK}------------------------------------------------------------${BLACK}"
-echo ""
-}
-
 _setup_dir()
 {
 	mkdir -p $srcDir
@@ -193,7 +169,7 @@ echo "   (2) Update"
 echo "   (3) Compile only"
 echo "   (4) Reset to master"
 echo "   (5) Online manual"
-echo "   (6) Show GPL license"
+echo "   (6) xxxxx "
 echo "   (7) Exit"
 echo " "
 echo "${BLUE}------------------------------------------------------------${BLACK}"
@@ -221,8 +197,7 @@ echo " ${BLACK}"
 		xdg-open $helppage
 
 	elif [ "$mainmenu" = 6 ]; then
-		_show_gpl
-		_endkey
+		# TO-DO
 		
 	elif [ "$mainmenu" = 7 ]; then
 		echo " ${PINK}Bye Bye ! ${BLACK} "
