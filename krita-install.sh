@@ -222,9 +222,9 @@ echo " Welcome, this script will help you to compile and update $project"
 echo "      "
 echo "${GREEN}  *Infos*${BLACK} "
 echo "  - script version : "$scriptversion
-echo "  - source path :    "$directory/$project/$srcDir
-echo "  - build path :    "$directory/$project/$buildDir
-echo "  - install path :     "$directory/$project/$instDir
+echo "  - source path :    "$srcDir
+echo "  - build path :    "$buildDir
+echo "  - install path :     "$instDir
 echo "  "
 
 # menu
