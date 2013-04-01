@@ -55,20 +55,49 @@ _done()
 
 _install_dependencies()
 {
-	echo "${RED}This part will install all the dependencies for building $project"
-	echo "the repositories will be updated then new package installed"
-	echo  "Also, every $project package already installed will be automatically uninstalled"
-	echo -n "press [Enter] to continue, or [Ctrl+C] to exit${BLACK}"
-	read CHOICE
+	echo "${RED}<<>><<>><<>><<>><<>><<>><<>> WARNING <<>><<>><<>><<>><<>><<>><<>>"
+	echo "      "
+	echo "IMPORTANT : TO-READ AND TO-DO"
+	echo " "
+	echo  "This part will do an attempt to auto-install all the dependencies "
+	echo  "for building $project. Around 150MB will be necessary to perform it"
+	echo  "Also, every Mypaint package must be uninstalled"
+	echo  "The script will try to do it for you, but it's better to also do it manually now"
+	echo  "using a package manager as Synaptic for exemple."
+	echo " "
+	echo  "Reason : You can't use $project package ( from repo, or ppa ) along this compilation !"
+	echo " "
+	echo "<<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>>${BLACK}"
+	echo -n "           press [Enter] when your system is setup and ready, or [Ctrl+C] to exit"
+	read CHOICE     
+	echo "${BLUE}------------------------------------------------------"
+	echo "UPDATING SYSTEM"
+	echo "------------------------------------------------------${BLACK}"
+	echo "      "
 	sudo apt-get -y update
+	echo "${BLUE}------------------------------------------------------"
+	echo "REMOVING MYPAINT PACKAGES"
+	echo "------------------------------------------------------${BLACK}"
+	echo "      "
 	sudo apt-get purge mypaint*
-	sudo apt-get -y install build-essential git libgtk-3-dev python-gi-dev gir1.2-gtk-3.0 python-gi-cairo g++ git-core python-dev python-numpy swig scons gettext libpng12-dev liblcms2-dev libjson0-dev
+	echo "${BLUE}------------------------------------------------------"
+	echo "INSTALLING DEPENDENCIES"
+	echo "------------------------------------------------------${BLACK}"
+	echo "      "
+	sudo apt-get -y install build-essential git libgtk-3-dev python-gi-dev gir1.2-gtk-3.0 python-gi-cairo g++ git-core python-dev python-numpy swig scons gettext libpng12-dev liblcms2-dev libjson0-dev libgtk2.0-bin
+	echo "${BLUE}------------------------------------------------------"
+	echo "CHECK BROKEN PACKAGES"
+	echo "------------------------------------------------------${BLACK}"
+	echo "      "
 	sudo apt-get -f install
 }
 
 _get_sources()
 {
 	cd $directory
+	_separators
+	echo "${BLUE}  Now, getting the $project source with GIT ${BLACK}"
+	echo "${BLUE}  [ Note: the project is large, speed depend of server, internet connection. ] ${BLACK}"
 	git clone $gitRepo $project
 }
 
@@ -81,9 +110,10 @@ _compile_sources()
 	echo "      "
 	sudo scons prefix=/usr/local install
 	_separators
-	echo "${BLUE}  Updating GTK Cache for icons ${BLACK}"
+	echo "${BLUE}  Updating GTK2 Cache for icons in menu, and kbuildsycoca4 for KDE menu ${BLACK}"
 	echo "      "
 	sudo gtk-update-icon-cache --ignore-theme-index /usr/local/share/icons/hicolor
+	kbuildsycoca4
 }
 
 _update_sources()
