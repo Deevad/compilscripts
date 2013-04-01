@@ -31,6 +31,11 @@ BLUE="\033[1;34m"
 GREEN="\033[1;32m"
 RED="\033[1;31m"
 
+_separators()
+{
+	echo "${PINK}=${BLUE}-${PINK}=${BLUE}-${PINK}=${BLUE}-${PINK}=${BLUE}-${PINK}=${BLUE}-${PINK}=${BLUE}-${PINK}=${BLUE}-${PINK}=${BLUE}-${PINK}=${BLUE}-${PINK}=${BLUE}-${PINK}=${BLUE}-${PINK}=${BLUE}-${PINK}=${BLUE}-${PINK}=${BLUE}-${PINK}=${BLUE}-${PINK}=${BLUE}-${PINK}=${BLUE}-${PINK}=${BLUE}-${PINK}=${BLUE}-${PINK}=${BLUE}-${PINK}=${BLUE}-${PINK}=${BLUE}-${PINK}=${BLUE}-${PINK}=${BLUE}-${PINK}=${BLUE}-${PINK}=${BLUE}-${PINK}=${BLUE}-${PINK}=${BLUE}-${PINK}=${BLUE}-${PINK}=${BLACK}"
+}
+
 _setup_dir()
 {
 	mkdir -p $srcDir
@@ -68,13 +73,22 @@ _get_sources()
 _compile_sources()
 {
 	cd $srcDir
+	_separators
+	echo "${BLUE}  Now, configuring, compiling, installing ... this is the main part of the script, error are important to read ${BLACK}"
+	echo "${BLUE}  As Mypaint is installed in /usr/local , the script will ask you password for admin permission ${BLACK}"
+	echo "      "
 	sudo scons prefix=/usr/local install
+	_separators
+	echo "${BLUE}  Updating GTK Cache for icons ${BLACK}"
+	echo "      "
 	sudo gtk-update-icon-cache --ignore-theme-index /usr/local/share/icons/hicolor
 }
 
 _update_sources()
 {
 	cd $srcDir
+	_separators
+	echo "${BLUE}  Now, updating $project source with GIT ${BLACK}"
 	git pull
 }
 
@@ -106,7 +120,7 @@ _user_uninstall()
 	sudo scons prefix=/usr/local uninstall
 	sudo gtk-update-icon-cache --ignore-theme-index /usr/local/share/icons/hicolor
 	echo "${RED} To-do manually : $project"
-	echo "* Now if you want to also delete the sources , delete manually $srcDir "
+	echo "* Now if you want to also delete the sources , delete manually $directory/$project/ "
 	echo -n "press [Enter] to continue, or [Ctrl+C] to exit${BLACK}"
 	read CHOICE
 	_done
@@ -162,7 +176,7 @@ read END
 #######
 
 clear
-echo "${BLUE}      "
+echo "${PINK}      "
 echo " |\/|   _  _ . _ _|_"
 echo " |  |\/|_)(_||| | | "
 echo "     / |  "
@@ -194,6 +208,7 @@ echo -n "               Enter your choice (1-7) then press [enter] :${PINK}"
 read mainmenu
 echo " "
 echo " ${BLACK}"
+clear
 
 	if [ "$mainmenu" = 1 ]; then
 		_user_install

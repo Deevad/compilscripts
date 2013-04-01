@@ -38,6 +38,11 @@ BLUE="\033[1;34m"
 GREEN="\033[1;32m"
 RED="\033[1;31m"
 
+_separators()
+{
+	echo "${PINK}=${BLUE}-${PINK}=${BLUE}-${PINK}=${BLUE}-${PINK}=${BLUE}-${PINK}=${BLUE}-${PINK}=${BLUE}-${PINK}=${BLUE}-${PINK}=${BLUE}-${PINK}=${BLUE}-${PINK}=${BLUE}-${PINK}=${BLUE}-${PINK}=${BLUE}-${PINK}=${BLUE}-${PINK}=${BLUE}-${PINK}=${BLUE}-${PINK}=${BLUE}-${PINK}=${BLUE}-${PINK}=${BLUE}-${PINK}=${BLUE}-${PINK}=${BLUE}-${PINK}=${BLUE}-${PINK}=${BLUE}-${PINK}=${BLUE}-${PINK}=${BLUE}-${PINK}=${BLUE}-${PINK}=${BLUE}-${PINK}=${BLUE}-${PINK}=${BLUE}-${PINK}=${BLUE}-${PINK}=${BLACK}"
+}
+
 _setup_dir()
 {
 	mkdir -p $srcDir
@@ -57,14 +62,20 @@ _done()
 
 _install_dependencies()
 {
-	echo "${RED}----------------------WARNING-------------------------"
+	echo "${RED}<<>><<>><<>><<>><<>><<>><<>> WARNING <<>><<>><<>><<>><<>><<>><<>>"
 	echo "      "
-	echo  "This part will do an attempt to auto-install all the dependencies for building $project"
-	echo  "Around 2GB will be necessary to install everything in your /home directory, and system will be updated"
+	echo "IMPORTANT : TO-READ AND TO-DO"
+	echo " "
+	echo  "This part will do an attempt to auto-install all the dependencies "
+	echo  "for building $project. Around 2GB will be necessary to install everything in your"
+	echo  "/home directory, and system will be updated"
 	echo  "Also, every Krita , Karbon and Calligra package must be uninstalled"
-	echo "      "
-	echo "      "
-	echo "       ==== IMPORTANT : TO-READ AND TO-DO ===="
+	echo  "The script will try to do it for you, but it's better to also do it manually "
+	echo  "Using a package manager as Synaptic for exemple."
+	echo " "
+	echo  "Reason : You can't use 2.5 or 2.6 stable from package along this compilation !"
+	echo " "
+	echo " also : "
 	echo  "1) You need to have a recent VC library installed first, VC manage performance/CPU/etc..."
 	echo  "* To compile VC, use the vc-install.sh script and install it"
 	echo "      "
@@ -75,11 +86,9 @@ _install_dependencies()
 	echo  "* On the tab 'Linux Mint Software' , check to activate 'Source code' "
 	echo  "* On the tab 'Other Software' check to activate 'Ubuntu 12.10 Quantal Quetzal (source code) ' "
 	echo  "...then close the windows to finish "
-	echo "      "
-	echo "      "
-	echo "      "
-	echo "-----------------------------------------------------${BLACK}"
-	echo -n "press [Enter] when you did all the task and met all requirement, or [Ctrl+C] to abort"
+	echo " "
+	echo "<<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>>${BLACK}"
+	echo -n "           press [Enter] when your system is setup and ready, or [Ctrl+C] to exit"
 	read CHOICE     
 	
 	sudo apt-get -y update
@@ -93,12 +102,19 @@ _install_dependencies()
 _get_sources()
 {
 	cd $directory/$project/
+	_separators
+	echo "${BLUE}  Now, getting the $project source with GIT ${BLACK}"
+	echo "${BLUE}  [ Note: the project is large, speed depend of server, internet connection. ] ${BLACK}"
 	git clone $gitRepo src
 }
 
 _compile_sources()
 {
 	cd $buildDir
+	_separators
+	echo "${BLUE}  Now, configuring, compiling, installing ... this is the main part of the script, error are important to read ${BLACK}"
+	echo "${BLUE}  [ Note: this part can take from 2min to 1h depending of your CPU and disk speed access ] ${BLACK}"
+	echo "      "
 	cmake ../src -DCREATIVEONLY=ON -DCMAKE_BUILD_TYPE=RELWITHDEBINFO -DCMAKE_INSTALL_PREFIX=../inst
 	make -j$numCores
 	make install -j$numCores
@@ -106,7 +122,7 @@ _compile_sources()
 	if [ ! -e $token ]; then
 			# token don't exist
 			
-			# backing extra in .profile
+			# backing extra in .profileEND
 			echo "export PATH=$PATH:$instDir/bin" >> ~/.profile
 			echo "export KDEDIRS=$KDEDIRS:$instDir" >> ~/.profile
 			
@@ -115,7 +131,9 @@ _compile_sources()
 			#token is created
 			touch $token
 	fi
-	
+	_separators
+	echo "${BLUE}  Now, updating links with kbuildsycoca4 , not important to read, often a lot of lines ${BLACK}"
+	echo "      "
 	kbuildsycoca4
 
 }
@@ -123,6 +141,8 @@ _compile_sources()
 _update_sources()
 {
 	cd $srcDir
+	_separators
+	echo "${BLUE}  Now, updating $project source with GIT ${BLACK}"
 	git pull
 }
 
@@ -214,7 +234,7 @@ read END
 #######
 
 clear
-echo "${BLUE}      "
+echo "${PINK}      "
 echo "	|_/ _.|_ _  "
 echo "	| \| ||_(_| "
 echo "${BLACK}      "
@@ -244,7 +264,7 @@ echo -n "               Enter your choice (1-7) then press [enter] :${PINK}"
 read mainmenu
 echo " "
 echo " ${BLACK}"
-
+clear
 
 	if [ "$mainmenu" = 1 ]; then
 		_user_install
@@ -275,9 +295,5 @@ echo " ${BLACK}"
 	else
 	echo "the script couldn't understand your choice, try again...";
 	fi;
-	
-cd $directory
 
-# a key to prevent terminal closing
-echo -n "Script finished job, press a key to exit"
-read END
+
