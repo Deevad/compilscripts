@@ -1,11 +1,9 @@
 #!/bin/sh
 #: Title       : Vc-install
 #: Author      : David REVOY < info@davidrevoy.com >
+#: Version     : 0.2a
 #: License     : GPL ; read LICENSE
 #  Inspired by : Spell script : http://pastebin.com/KkT9SvTs , Kubuntiac script : http://forum.kde.org/viewtopic.php?f=139&t=92880
-
-# Script version
-scriptversion="v0.2"
 
 # Project name
 project=vc
@@ -25,13 +23,6 @@ numCores=$((`cat /proc/cpuinfo | grep processor | wc -l`))
 
 # Git repository adress
 gitRepo=git://gitorious.org/vc/vc.git
-
-# Color lib
-PINK="\033[1;35m"
-BLACK="\033[1;0m"
-BLUE="\033[1;34m"
-GREEN="\033[1;32m"
-RED="\033[1;31m"
 
 _setup_dir()
 {

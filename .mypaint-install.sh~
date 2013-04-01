@@ -1,12 +1,17 @@
 #!/bin/sh
+
 #: Title       : Mypaint-install
-#: Author      : David REVOY < info@davidrevoy.com >
-#: License     : GPL ; read LICENSE
-#  Inspired by : Spell script : http://pastebin.com/KkT9SvTs , Kubuntiac script : http://forum.kde.org/viewtopic.php?f=139&t=92880
+#: Date Created: 2013-03-31
+#: Author      : David REVOY
+#: Version     : 0.2
+#: License     : GPL ; see function show_gpl in the code
+# Inspired by :
+# Spell script : http://pastebin.com/KkT9SvTs
+# Kubuntiac script : http://forum.kde.org/viewtopic.php?f=139&t=92880
 
 
 # Script version
-scriptversion="v0.2a"
+scriptversion="v0.2"
 
 # Project name
 project=mypaint

@@ -1,0 +1,58 @@
+                           _ _               _       _   
+                          (_) |             (_)     | |  
+  ___ ___  _ __ ___  _ __  _| |___  ___ _ __ _ _ __ | |_ 
+ / __/ _ \| '_ ` _ \| '_ \| | / __|/ __| '__| | '_ \| __|
+| (_| (_) | | | | | | |_) | | \__ \ (__| |  | | |_) | |_ 
+ \___\___/|_| |_| |_| .__/|_|_|___/\___|_|  |_| .__/ \__|
+                    | |                       | |        
+                    |_|                       |_|        
+
+
+	What is it?
+	-----------
+	Compilscript are a set of script to compil, update Gfx FLOSS project as Mypaint, Krita with ease.
+	0.2 serie is the actual latest version, this one have Krita + VC, and Mypaint.
+	
+	
+	Documentation
+	-------------
+	The script were tested and written for Linux Mint 14 KDE edition
+	
+	
+	Installation
+	------------
+	The 3 scripts can be downloaded here : <To-do>
+	Download, Extract, Open a terminal , and execute them.
+	All will be installed in ~/Software/<software-name>
+	I advice to install Mypaint first, then VC , then Krita ; and reboot.
+	It's very easy to use, follow the instructions. 
+	
+	
+	Changelog :
+	-----------
+	
+	[ 0.2 - 2013-04-01]
+	* Colored output in the terminal, more user friendly
+	* Better warning for Krita's need to have VC installed, and Ubuntu source activated
+	* Click to close at the end
+	* Drop of 'Reset to Stable' option of previous versions : it was making dependencies & preferences conflict
+	* Added Readme, license
+	* Repo created on GitHub
+	
+	[ 0.1 - 2013-01-09]
+	* Updated webpage link for option 6
+	* Krita-install.sh now remove all pre-installed calligra package
+	
+	[ 0.0 - 2013-01-01]
+	* First release of krita-install.sh, mypaint-install.sh, vc-install.sh
+	
+	
+	Licensing
+	---------
+	Please see the file called LICENSE.
+	
+	Contacts
+	--------
+	David REVOY, < info@davidrevoy.com >
+	
+	

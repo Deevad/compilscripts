@@ -1,6 +1,7 @@
 #!/bin/sh
 #: Title       : Krita-install
 #: Author      : David REVOY < info@davidrevoy.com >
+#: Version     : 0.2a
 #: License     : GPL ; read LICENSE
 #  Inspired by : Spell script : http://pastebin.com/KkT9SvTs , Kubuntiac script : http://forum.kde.org/viewtopic.php?f=139&t=92880
 
