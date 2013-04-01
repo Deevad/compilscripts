@@ -97,6 +97,7 @@ _install_dependencies()
 	echo "------------------------------------------------------${BLACK}"
 	echo "      "
 	sudo apt-get -f install
+	echo "      "
 }
 
 _get_sources()

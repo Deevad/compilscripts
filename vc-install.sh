@@ -6,7 +6,7 @@
 #  Inspired by : Spell script : http://pastebin.com/KkT9SvTs , Kubuntiac script : http://forum.kde.org/viewtopic.php?f=139&t=92880
 
 # Script version
-scriptversion="v0.2"
+scriptversion="v0.3"
 
 # Project name
 project=vc
