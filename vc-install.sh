@@ -156,14 +156,10 @@ _user_uninstall()
 	echo "UNINSTALLATION"
 	echo "------------------------------------------------------${BLACK}"
 	echo "      "
-	echo "${RED}This part will uninstall all $project"
-	echo "Obviously : to uninstall , you need a previous installation"
-	echo -n "press [Enter] to continue, or [Ctrl+C] to exit${BLACK}"
-	read CHOICE
-	cd $buildDir
-	make uninstall
-	echo "${RED} To-do manually : $project"
-	echo "* Now if you want to also delete the sources and build directory , delete manually $directory/$project ${BLACK} "
+	echo "${RED}Unfortunately, there is no Uninstall option for the VC project."
+	echo "But the installed library is suffisently small to just keep it in your system."
+	echo "It shouldn't be an issue."
+	echo "You can delete the sources and build directory manually $directory/$project now ${BLACK} "
 	_done
 	
 }
