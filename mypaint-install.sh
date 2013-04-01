@@ -7,7 +7,7 @@
 
 
 # Script version
-scriptversion="v0.2a"
+scriptversion="v0.3"
 
 # Project name
 project=mypaint
