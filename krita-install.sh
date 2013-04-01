@@ -184,7 +184,9 @@ _user_install()
 	_get_sources
 	_update_sources
 	_compile_sources
-	echo "Now, it's adviced to perform a system restart, or Krita will not launch."
+	echo "${RED}<<>><<>><<>><<>><<>><<>><<>> NOTICE <<>><<>><<>><<>><<>><<>><<>>"
+	echo " Now, it's adviced to do a system restart, or Krita will not launch."
+	echo "<<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>>${BLACK}"
 	_done
 }
 
