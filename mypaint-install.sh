@@ -105,7 +105,12 @@ _user_uninstall()
 	cd $srcDir
 	sudo scons prefix=/usr/local uninstall
 	sudo gtk-update-icon-cache --ignore-theme-index /usr/local/share/icons/hicolor
+	echo "${RED} To-do manually : $project"
+	echo "* Now if you want to also delete the sources , delete manually $srcDir "
+	echo -n "press [Enter] to continue, or [Ctrl+C] to exit${BLACK}"
+	read CHOICE
 	_done
+	
 }
 
 _user_update()
@@ -163,7 +168,6 @@ echo " |  |\/|_)(_||| | | "
 echo "     / |  "
 echo "${BLACK}      "
 echo " Welcome, this script will help you to compile and update $project"
-echo " Originaly written for Linux Mint 14 KDE by David Revoy"
 echo "      "
 echo "${GREEN}  *Infos*${BLACK} "
 echo "  - script version : "$scriptversion
@@ -172,6 +176,7 @@ echo "  - build path :     "$directory/$project
 echo "  - install path :   /usr/local"
 echo "  "
 echo "      "
+
 # menu
 echo "${BLUE}------------------------------------------------------------${BLACK}"
 echo "${BLUE}     MENU   ${BLACK}"
@@ -189,6 +194,7 @@ echo -n "               Enter your choice (1-7) then press [enter] :${PINK}"
 read mainmenu
 echo " "
 echo " ${BLACK}"
+
 	if [ "$mainmenu" = 1 ]; then
 		_user_install
 		_endkey
