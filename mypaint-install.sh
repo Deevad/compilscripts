@@ -52,10 +52,10 @@ _done()
 
 _install_dependencies()
 {
-	echo "This part will install all the dependencies for building $project"
+	echo "${RED}This part will install all the dependencies for building $project"
 	echo "the repositories will be updated then new package installed"
-	echo  "Also, every $project package installed will be automatically uninstalled"
-	echo -n "press [Enter] to continue, or [Ctrl+C] to abort"
+	echo  "Also, every $project package already installed will be automatically uninstalled"
+	echo -n "press [Enter] to continue, or [Ctrl+C] to exit${BLACK}"
 	read CHOICE
 	sudo apt-get -y update
 	sudo apt-get purge mypaint*
