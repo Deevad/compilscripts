@@ -28,6 +28,7 @@
 	* Drop of 'Reset to Stable' option of previous versions : it was making dependencies & preferences conflict
 	* Added Readme, license
 	* Repo created on GitHub
+	* Attempt to add a uninstaller too
 	
 	[ 0.1 - 2013-01-09]
 	* Updated webpage link for option 6

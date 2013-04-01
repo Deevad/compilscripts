@@ -1,4 +1,5 @@
 #!/bin/sh
+#
 #: Title       : Krita-install
 #: Author      : David REVOY < info@davidrevoy.com >
 #: License     : GPL ; read LICENSE
