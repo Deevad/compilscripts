@@ -214,8 +214,7 @@ echo "   1) Install"
 echo "   2) Update"
 echo "   3) Compile only"
 echo "   4) Reset to master"
-echo "   5) Reset to stable 2.6"
-echo "   6) Help webpage"
+echo "   5) Help webpage"
 echo "   ... or Ctrl+C to exit"
 echo " "
 echo "------------------------------------------------------"
@@ -236,10 +235,8 @@ echo " "
 		_user_reset_master
 		
 	elif [ "$mainmenu" = 5 ]; then
-		_user_reset_to_stable
-		
-	elif [ "$mainmenu" = 6 ]; then
 		xdg-open $helppage
+		
 	else
 	echo "the script couldn't understand your choice, try again...";
 	fi;
