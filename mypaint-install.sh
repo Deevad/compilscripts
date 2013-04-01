@@ -149,14 +149,14 @@ _user_uninstall()
 	echo -n "press [Enter] to continue, or [Ctrl+C] to exit"
 	read CHOICE
 	cd $srcDir
-	sudo scons uninstall
+	sudo scons -c prefix=/usr/local install
 	_separators
 	echo "${BLUE}  Updating GTK2 Cache for icons in menu, and kbuildsycoca4 for KDE menu ${BLACK}"
 	echo "      "
 	sudo gtk-update-icon-cache --ignore-theme-index /usr/local/share/icons/hicolor
 	kbuildsycoca4
-	echo "${RED} To-do manually : $project"
-	echo "* Now if you want to also delete the sources , delete manually $directory/$project/ "
+	echo "${RED}"
+	echo "* Note : If you want to also delete the sources , delete manually $directory/$project/ now "
 	echo -n "press [Enter] to continue, or [Ctrl+C] to exit${BLACK}"
 	read CHOICE
 	_done
