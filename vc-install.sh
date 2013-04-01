@@ -56,21 +56,30 @@ _done()
 
 _install_dependencies()
 {
-	echo "${RED} This part will install all the dependencies for building $project"
-	echo "the system will be updated and new package installed${BLACK}"
-	echo -n "press [Enter] to continue, or [Ctrl+C] to abort"
-	read CHOICE
-	_separators
-	echo "${BLUE}  Now, updating your system ${BLACK}"
+	echo "${RED}<<>><<>><<>><<>><<>><<>><<>> WARNING <<>><<>><<>><<>><<>><<>><<>>"
+	echo "      "
+	echo "IMPORTANT : TO-READ AND TO-DO"
+	echo " "
+	echo  "This part will do an attempt to auto-install all the dependencies "
+	echo  "for building $project. Around 150MB will be necessary to perform it"
+	echo  "Also ; a full system update will be done"
+	echo "<<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>><<>>${BLACK}"
+	echo -n "           press [Enter] when your system is setup and ready, or [Ctrl+C] to exit"
+	read CHOICE     
+	echo "${BLUE}------------------------------------------------------"
+	echo "UPDATING SYSTEM"
+	echo "------------------------------------------------------${BLACK}"
 	echo "      "
 	sudo apt-get -y update
 	sudo apt-get -y upgrade
-	_separators
-	echo "${BLUE}  Now, installing dependencie packages : build-essential git cmake  ${BLACK}"
+	echo "${BLUE}------------------------------------------------------"
+	echo "INSTALLING DEPENDENCIES"
+	echo "------------------------------------------------------${BLACK}"
 	echo "      "
 	sudo apt-get -y install build-essential git cmake
-	_separators
-	echo "${BLUE}  Now, checking if no package are broken  ${BLACK}"
+	echo "${BLUE}------------------------------------------------------"
+	echo "CHECK BROKEN PACKAGES"
+	echo "------------------------------------------------------${BLACK}"
 	echo "      "
 	sudo apt-get -f install
 }
