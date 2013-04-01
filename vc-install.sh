@@ -197,7 +197,7 @@ echo "${GREEN}  *Infos*${BLACK} "
 echo "  - script version : "$scriptversion
 echo "  - source path :    "$srcDir
 echo "  - build path :    "$buildDir
-echo "  - install path :     " in your system ( make install )
+echo "  - install path :     installed in your system"
 echo "  "
 # menu
 echo "${BLUE}------------------------------------------------------------${BLACK}"
