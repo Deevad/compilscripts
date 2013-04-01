@@ -58,7 +58,7 @@ _done()
 	echo "${GREEN}------------------------------------------------------------"
 	echo " All task requested are now done"
 	echo "-----------------------------------------------------------"
-	echo " Note : this doesn't mean everything was fine, check the log for more info-${BLACK}"
+	echo " Note : this doesn't mean everything was fine, check the log for more info.${BLACK}"
 	echo " "
 }
 
