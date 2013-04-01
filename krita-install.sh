@@ -174,55 +174,72 @@ _user_reset_master()
 	_done
 }
 
+_endkey()
+{
+# a key to exit
+echo -n "Press [enter] to exit"
+read END
+}
+
 
 #######
 # UI  #
 #######
 
 clear
-tput rev
-echo "$project-install.sh"
-tput sgr0
+echo "${BLUE}      "
+echo "	|_/ _.|_ _  "
+echo "	| \| ||_(_| "
+echo "${BLACK}      "
+echo " Welcome, this script will help you to compile and update $project"
 echo "      "
-echo "     __  (\_"
-echo "    (_ \ ( '>"
-echo "      ) \/_)="
-echo "      (_(_ )_"
-echo "      "
-echo "Compile, update, and more for $project"
-echo "  in "$directory/$project
-echo "  written for Linux Mint KDE 14"
-echo "      "
+echo "${GREEN}  *Infos*${BLACK} "
+echo "  - script version : "$scriptversion
+echo "  - source path :    "$directory/$project/$srcDir
+echo "  - build path :    "$directory/$project/$buildDir
+echo "  - install path :     "$directory/$project/$instDir
+echo "  "
+
 # menu
-echo "------------------------------------------------------"
-echo "     MENU   "
+echo "${BLUE}------------------------------------------------------------${BLACK}"
+echo "${BLUE}     MENU   ${BLACK}"
 echo "      "
-echo "   1) Install"
-echo "   2) Update"
-echo "   3) Compile only"
-echo "   4) Reset to master"
-echo "   5) Help webpage"
-echo "   ... or Ctrl+C to exit"
+echo "   (1) Install"
+echo "   (2) Update"
+echo "   (3) Compile only"
+echo "   (4) Reset to master"
+echo "   (5) Uninstall"
+echo "   (6) Online manual "
+echo "   (7) Exit"
 echo " "
-echo "------------------------------------------------------"
-echo -n "                  Enter your choice (1-6) :"
+echo "${BLUE}------------------------------------------------------------${BLACK}"
+echo -n "               Enter your choice (1-7) then press [enter] :${PINK}"
 read mainmenu
 echo " "
-echo " "
+echo " ${BLACK}"
+
+
 	if [ "$mainmenu" = 1 ]; then
 		_user_install
+		_endkey
 		
 	elif [ "$mainmenu" = 2 ]; then
 		_user_update
+		_endkey
 		
 	elif [ "$mainmenu" = 3 ]; then
 		_user_compile_only
+		_endkey
 
 	elif [ "$mainmenu" = 4 ]; then
 		_user_reset_master
+		_endkey
 		
-	elif [ "$mainmenu" = 5 ]; then
+	elif [ "$mainmenu" = 6 ]; then
 		xdg-open $helppage
+	
+	elif [ "$mainmenu" = 7 ]; then
+		echo " ${PINK}Bye Bye ! ${BLACK} "
 		
 	else
 	echo "the script couldn't understand your choice, try again...";
