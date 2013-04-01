@@ -142,7 +142,7 @@ _compile_sources()
 	echo "${BLUE}  Now, configuring, compiling, installing ... this is the main part of the script, error are important to read ${BLACK}"
 	echo "${BLUE}  [ Note: this part can take from 2min to 1h depending of your CPU and disk speed access ] ${BLACK}"
 	echo "      "
-	cmake ../src -DCREATIVEONLY=ON -DCMAKE_BUILD_TYPE=RELWITHDEBINFO -DCMAKE_INSTALL_PREFIX=../inst
+	cmake ../src -DPRODUCTSET=CREATIVE -DCMAKE_BUILD_TYPE=RELWITHDEBINFO -DCMAKE_INSTALL_PREFIX=../inst
 	make -j$numCores
 	make install -j$numCores
 
