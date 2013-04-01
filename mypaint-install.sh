@@ -96,6 +96,22 @@ _user_install()
 	_done
 }
 
+_user_uninstall()
+{
+	echo "${BLUE}------------------------------------------------------"
+	echo "UNINSTALLATION"
+	echo "------------------------------------------------------${BLACK}"
+	echo "      "
+	echo "${RED}This part will uninstall all $project"
+	echo "Obviously : to uninstall , you need a previous installation"
+	echo -n "press [Enter] to continue, or [Ctrl+C] to exit${BLACK}"
+	read CHOICE
+	cd $srcDir
+	sudo scons prefix=/usr/local uninstall
+	sudo gtk-update-icon-cache --ignore-theme-index /usr/local/share/icons/hicolor
+	_done
+}
+
 _user_update()
 {
 	echo "${BLUE}------------------------------------------------------"
@@ -168,8 +184,8 @@ echo "   (1) Install"
 echo "   (2) Update"
 echo "   (3) Compile only"
 echo "   (4) Reset to master"
-echo "   (5) Online manual"
-echo "   (6) xxxxx "
+echo "   (5) Uninstall"
+echo "   (6) Online manual "
 echo "   (7) Exit"
 echo " "
 echo "${BLUE}------------------------------------------------------------${BLACK}"
@@ -194,10 +210,11 @@ echo " ${BLACK}"
 		_endkey
 		
 	elif [ "$mainmenu" = 5 ]; then
-		xdg-open $helppage
+		_user_uninstall
+		_endkey
 
 	elif [ "$mainmenu" = 6 ]; then
-		# TO-DO
+		xdg-open $helppage
 		
 	elif [ "$mainmenu" = 7 ]; then
 		echo " ${PINK}Bye Bye ! ${BLACK} "
