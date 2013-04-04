@@ -63,7 +63,7 @@ _install_dependencies()
 	echo  "for building $project. Around 150MB will be necessary to perform it"
 	echo  "Also, every Mypaint package must be uninstalled"
 	echo  "The script will try to do it for you, but it's better to also do it manually now"
-	echo  "using a package manager as Synaptic for exemple."
+	echo  "using a package manager as Synaptic for example."
 	echo " "
 	echo  "Reason : You can't use $project package ( from repo, or ppa ) along this compilation !"
 	echo " "
