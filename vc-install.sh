@@ -11,6 +11,9 @@ scriptversion="v0.3"
 # Project name
 project=vc
 
+# Version to build
+vcVersion=0.7.0
+
 # Help page
 helppage=https://github.com/Deevad/compilscripts
 
@@ -94,7 +97,7 @@ _get_sources()
 	cd $directory/$project/
 	_separators
 	echo "${BLUE}  Now, updating $project source with GIT ${BLACK}"
-	git clone $gitRepo src
+	git clone -b $vcVersion $gitRepo src
 }
 
 _compile_sources()
@@ -128,8 +131,8 @@ _user_reset_master()
 	echo "------------------------------------------------------${BLACK}"
 	echo "      "
 	cd $srcDir
-	git reset --hard master
-	git checkout master
+	git reset --hard $vcVersion
+	git checkout $vcVersion
 	git pull
 	git clean -dfx
 	_compile_sources
