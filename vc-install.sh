@@ -153,20 +153,6 @@ _user_install()
 	_done
 }
 
-_user_uninstall()
-{
-	echo "${BLUE}------------------------------------------------------"
-	echo "UNINSTALLATION"
-	echo "------------------------------------------------------${BLACK}"
-	echo "      "
-	echo "${RED}Unfortunately, there is no Uninstall option for the VC project."
-	echo "But the installed library is suffisently small to just keep it in your system."
-	echo "It shouldn't be an issue."
-	echo "You can delete the sources and build directory manually $directory/$project now ${BLACK} "
-	_done
-	
-}
-
 _user_compile_only()
 {
 	echo "${BLUE}------------------------------------------------------"
@@ -221,9 +207,8 @@ echo "   (1) Install"
 echo "   (2) Update"
 echo "   (3) Compile only"
 echo "   (4) Reset to master"
-echo "   (5) Uninstall"
-echo "   (6) Online manual "
-echo "   (7) Exit"
+echo "   (5) Online manual "
+echo "   (6) Exit"
 echo " "
 echo "${BLUE}------------------------------------------------------------${BLACK}"
 echo -n "               Enter your choice (1-7) then press [enter] :${PINK}"
@@ -249,13 +234,9 @@ clear
 		_endkey
 		
 	elif [ "$mainmenu" = 5 ]; then
-		_user_uninstall
-		_endkey
-		
-	elif [ "$mainmenu" = 6 ]; then
 		xdg-open $helppage
 	
-	elif [ "$mainmenu" = 7 ]; then
+	elif [ "$mainmenu" = 6 ]; then
 		echo " ${PINK}Bye Bye ! ${BLACK} "
 		
 	else
