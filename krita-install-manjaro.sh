@@ -87,9 +87,9 @@ _postinstalltodo()
 	echo " "
 	echo  "If compilation went well ( scrollback, see if it's 100% everywhere, no bad error ) "
 	echo  "do the following post install manually , edit  ~/.xprofile and paste this at the end : ${BLACK}"
-	echo  "export KDEDIRS=$HOME/kde4/inst:$KDEDIRS"
-	echo  "export PATH=$HOME/kde4/inst/bin:$PATH"
-	echo  "export KDEHOME=$HOME/.kde"
+	echo  "export KDEDIRS=\$HOME/kde4/inst:\$KDEDIRS"
+	echo  "export PATH=\$HOME/kde4/inst/bin:\$PATH"
+	echo  "export KDEHOME=\$HOME/.kde"
 	echo " "
 	echo -n "${RED}             press [Enter] when it's done${BLACK}"
 	read CHOICE
