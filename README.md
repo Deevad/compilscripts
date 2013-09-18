@@ -8,11 +8,22 @@
 	-----------
 	Compilscript are a set of script to compil, update Gfx FLOSS project as Mypaint, Krita with ease.
 	0.2 serie is the actual latest version, this one have Krita + VC, and Mypaint.
-	Script are designed for Linux Mint 14 KDE, but also aim to be 'buntu compatible, from 12.04 and after
+	Script are designed for Linux Mint 14 KDE, but also aim to be 'buntu compatible, from 12.04 and after...
 	
 	
+	Note
+	------------
+
+	* By mid-october I will remove all scripts for 'buntu/Mint and propose them for Manjaro/Arch only.
+	* My final goal should be to remove this all, and propose it via AUR only. But I'm not skilled enough right now. Fork and new maintainer welcome...
+	* Note : Dropping support for 'buntu/Mint is not because I'm evil, it's because I have no time to maintain them. Fork and new maintainer welcome...
+
+
 	Installation
 	------------
+
+	* 'buntu users : Ignore or delete the script krita-install-manjaro.sh .
+	* Manjaro/Arch users : Ignore or delete all other scripts than krita-install-manjaro.sh
 	
 	* Get the script :
 	  - Download as ZIP : https://github.com/Deevad/compilscripts/archive/master.zip
