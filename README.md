@@ -1,6 +1,19 @@
 
-
 						Compilscripts
+	WARNING !		
+	== PROJECT UNMAINTAINED ==
+	This project ended with the introduction of the 'Build cat documentation' here :
+	http://www.davidrevoy.com/article/193/guide-building-krita-on-linux-for-cats.html
+	
+	The replacement script I use is shorter.
+	http://pastebin.kde.org/psj3xhnk6
+	
+	What mean Unmaintained ? it mean it's not tested anymore, and can break things.
+	Soon , by mid 2014 compilscript repo will be closed.
+	Thanks for those who reported, used the project. 
+	
+	-David
+	==========================
 	
 	
 
